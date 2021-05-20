@@ -55,7 +55,9 @@ class Device(object):
         'name': 'name',
         'owner_id': 'ownerId',
         'tenant_id': 'tenantId',
-        'type': 'type'
+        'type': 'type',
+        'device_profile_id': 'deviceProfileId',
+        'device_data': 'deviceData'
     }
 
     def __init__(self, additional_info=None, created_time=None, customer_id=None, device_data=None, device_profile_id=None, id=None, label=None, name=None, owner_id=None, tenant_id=None, type=None):  # noqa: E501
@@ -73,6 +75,8 @@ class Device(object):
         self._tenant_id = None
         self._type = None
         self.discriminator = None
+        self.device_profile_id = None
+        self.device_data = None
 
         if additional_info is not None:
             self.additional_info = additional_info
